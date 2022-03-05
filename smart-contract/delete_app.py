@@ -30,7 +30,7 @@ algod_client = algod.AlgodClient(
 )
 ''' TODO: Fill in to define account to delete apps from and app_id of app to delete''' 
 
-creator_mnemonic = "your mnemonic"
+creator_mnemonic = account_mnemonics[0]
 app_id = 0 # app id for the app you want to delete
 
 creator_private_key = mnemonic.to_private_key(creator_mnemonic)
@@ -78,10 +78,11 @@ def delete_all_apps(client, creator_address, private_key):
 
 '''------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'''
 
-# UNCOMMENT BELOW TO DELETE APP 
-# this following line deletes the specified app_id, 
-# delete_app(algod_client, creator_private_key, app_id)
+# UNCOMMENT BELOW TO DELETE APP
+if __name__ == "__main__":
+    # this following line deletes the specified app_id,
+    # delete_app(algod_client, creator_private_key, app_id)
 
-# this following code deletes all the apps the creator has created, use with caution!! Uncomment if you want to do this
-# delete_all_apps(algod_client, creator_address, creator_private_key)
+    # this following code deletes all the apps the creator has created, use with caution!! Uncomment if you want to do this
+    delete_all_apps(algod_client, creator_address, creator_private_key)
 
